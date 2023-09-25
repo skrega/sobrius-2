@@ -75,7 +75,9 @@ $(function () {
     function splitIntoPieces(number, content) {
         let numberToString = String(number)
         let arrayNumbers = numberToString.split('')
-        content = content.innerHTML = `<span>${arrayNumbers[0]}</span><span>${arrayNumbers[1]}</span>`
+        content.forEach((html) => {
+            content = html.innerHTML = `<span>${arrayNumbers[0]}</span><span>${arrayNumbers[1]}</span>`
+        })
         return content;
     }
     // получаем элементы, содержащие компоненты даты
