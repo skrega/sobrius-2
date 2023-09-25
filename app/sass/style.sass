@@ -1,0 +1,638 @@
+@import 'vars'
+@import 'fonts'
+@import 'reset'
+@import 'libs'
+@import 'global'
+@import 'mixin'
+
+.header
+    background: linear-gradient(180deg, #FFF 0%, #E2E2E2 100%)
+    padding: 19px 0 25px
+    position: sticky
+    top: -75px
+    z-index: 10
+    transition: all .3s
+    &.scroll-up
+        top: 0
+    &__inner
+        display: flex
+        align-items: center
+        justify-content: space-between
+    &__logo
+        margin-right: 30px
+
+    &-menu
+        display: flex
+        align-items: center
+        grid-gap: 35px
+    &-menu__link
+        text-transform: uppercase
+        &.active
+            opacity: 0.6
+    &-link
+        font-size: 12px
+        font-weight: 700
+        text-transform: uppercase
+        padding: 9px 12px
+        border: 1px solid $primary
+        border-radius: 10px
+        background: linear-gradient(94deg, #F0F2F7 3.52%, #E6E9EF 100%)
+        box-shadow: -12px -12px 20px 0px rgba(255, 255, 255, 0.80), 3px 3px 20px 0px rgba(166, 180, 200, 0.50)
+
+// top
+
+.top
+    // padding-bottom: 20px
+    // background-repeat: no-repeat
+    // background-position: 540px -86px
+    overflow: hidden
+    &__inner
+        position: relative
+        padding-top: 99px
+        min-height: 600px
+        background-repeat: no-repeat
+        background-position: center bottom
+    &__title
+        text-transform: uppercase
+    &__titles
+        max-width: 430px
+        width: 100%
+        margin-bottom: 20px
+    &__subtitle
+        color: #898989
+        margin-bottom: 15px
+    &-list
+        display: grid
+        grid-gap: 12px
+        margin-bottom: 30px
+    &-list__item
+        display: flex
+        align-items: center
+        grid-gap: 5px
+        font-weight: 700
+    &-img
+        margin-right: -150px
+        margin-top: -15px
+    &-text:not(.visible-xs)
+        position: absolute
+        bottom: 20px
+        right: 0
+        display: flex
+        align-items: center
+        font-weight: 400
+        width: 366px
+        grid-gap: 15px
+        font-size: 10px
+        line-height: 16px
+        img
+            width: 29px
+            height: 51px
+// promo-benefits 
+.promo-benefits
+    padding: 16px 0
+    color: #fff
+    &__items
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr
+    &-item
+        align-items: center
+        grid-gap: 10px
+
+.promotion:not(.promotion-bottom)
+    margin: 40px 0 60px
+.promotion:not(.promotion-bottom) .promotion__inner
+    border-radius: 10px
+    background: linear-gradient(180deg, #1910C9 -26.84%, rgba(0, 192, 156, 0.00) 124.34%)
+    padding: 21px 20px 0px 59px
+    color: #fff
+.promotion
+    &__inner
+        display: flex
+        align-items: flex-start
+        justify-content: space-between
+    &__content
+        width: 47%
+    &__title
+        color: #fff
+        margin-bottom: 10px
+    &__subtitle
+        margin-bottom: 18px
+        text-transform: uppercase
+    &__prices
+        z-index: 1
+        position: relative
+    &-sub__text
+        letter-spacing: 1px
+        color: #EDEDED
+        font-weight: 700
+        font-size: 20px
+        letter-spacing: 1px
+        line-height: 24px
+    &__img
+        margin-top: -190px
+        z-index: 0
+        position: relative
+        margin-left: auto
+
+    &-col
+        width: 425px
+    &-col__text
+        border-radius: 10px
+        width: 390px
+        margin: 0 auto
+        background-color: #fff
+        padding: 3px 10px
+        color: #333
+        text-align: center
+        font-size: 30px
+        font-weight: 700
+        line-height: 35px
+        letter-spacing: 1.5px
+        text-transform: uppercase
+
+.price-old
+    color: #fff
+    text-decoration: line-through
+    font-size: 35px
+    line-height: 40px
+.price-new
+    color: #D84033
+    font-size: 55px
+    line-height: 60px
+    font-weight: 700
+    letter-spacing: 1.1px
+    text-transform: uppercase
+
+.form
+    background-color: #fff
+    border-radius: 10px
+    border: 1px solid #838383
+    padding: 21px 38px 28px
+    &-row
+        margin-bottom: 25px
+    &-control
+        width: 100%
+        display: block
+        border-radius: 10px
+        border: 1px solid #838383
+        background: #F6F6F6
+        padding: 20px
+        font-size: 20px
+        text-align: center
+        &::placeholder
+            color: #575757
+            font-size: 25px
+            line-height: 25px
+            font-weight: 500
+            letter-spacing: 1.25px
+            transition: all .3s
+        &:focus::placeholder
+            color: rgba(#575757, 0.6)
+
+    &-btn
+        width: 100%
+        font-weight: 300
+        margin-bottom: 22px
+        font-size: 25px
+    &__text
+        color: #767676
+        text-align: center
+        font-size: 20px
+        font-weight: 700
+        text-transform: uppercase
+.btn-lg
+    padding: 19px 92px
+
+.timer__items
+    display: flex
+    margin: 11px 0 20px
+    justify-content: space-between
+    background-repeat: no-repeat
+    background-position: center top
+    background-image: url("data:image/svg+xml,%3Csvg width='425' height='75' viewBox='0 0 425 75' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='60' height='75' rx='10' fill='white'/%3E%3Crect x='65' width='60' height='75' rx='10' fill='white'/%3E%3Crect x='150' width='60' height='75' rx='10' fill='white'/%3E%3Crect x='215' width='60' height='75' rx='10' fill='white'/%3E%3Crect x='300' width='60' height='75' rx='10' fill='white'/%3E%3Crect x='365' width='60' height='75' rx='10' fill='white'/%3E%3C/svg%3E%0A")
+.timer__item
+    position: relative
+    width: 125px
+    padding-bottom: 35px
+    text-align: center
+    line-height: 74px
+    font-size: 65px
+    font-weight: 700
+    display: flex
+    justify-content: center
+    span
+        background: linear-gradient(180deg, #D84033 0%, #FFC6C1 100%)
+        background-clip: text
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+        width: 60px
+    &::before
+        content: attr(data-title)
+        display: block
+        position: absolute
+        left: 50%
+        bottom: 0
+        transform: translateX(-50%)
+        font-size: 20px
+        line-height: 20px
+        letter-spacing: normal
+        -webkit-text-fill-color: #575757
+        font-weight: 500
+        text-transform: uppercase
+
+    &:not(:last-child)::after
+        content: ':'
+        position: absolute
+        right: -22px
+        background: linear-gradient(180deg, #D84033 0%, #FFC6C1 100%)
+        background-clip: text
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+
+.compound
+    &__inner
+        background-image: url(../images/compound-img.png)
+        background-position: right center
+        background-repeat: no-repeat
+        padding-bottom: 72px
+        position: relative
+        background-size: contain
+        &::before
+            content: ''
+            position: absolute
+            right: 20px
+            border-radius: 453px
+            background: rgba(25, 16, 201, 0.70)
+            filter: blur(100px)
+            width: 453px
+            height: 453px
+            z-index: -1
+    &-box
+        border-radius: 10px
+        border: 5px solid $primary
+        max-width: 638px
+        width: 100%
+        position: relative
+        padding: 50px 76px 44px 60px
+    &-box__img-before
+        position: absolute
+        top: -42px
+        left: -11px
+    &__title
+        font-weight: 800
+        position: absolute
+        top: -30px
+        background-color: #fff
+        width: 444px
+        text-align: center
+        border-radius: 10px
+    &__items
+        padding-left: 25px
+    &-item
+        color: #333
+        font-size: 25px
+        line-height: 30px
+        font-weight: 400
+        list-style: disc
+
+        strong
+            font-weight: 700
+        &:not(:last-child)
+            margin-bottom: 16px
+    &-box__img-after
+        position: absolute
+        bottom: 0
+        right: 0
+.about
+    padding: 17px 0
+    background: linear-gradient(180deg, #1910C9 0%, #756DFF 100%)
+    &__inner
+        display: flex
+        align-items: center
+        justify-content: space-between
+        grid-gap: 25px
+    &__content
+        max-width: 561px
+        width: 100%
+    &__title
+        margin-bottom: 15px
+        color: #fff
+    &__subtitle
+        margin-bottom: 15px
+        padding: 10px 22px
+        background-color: #fff
+        border-radius: 10px
+        font-size: 18px
+        font-weight: 700
+        line-height: 140%
+    &__text
+        line-height: 140%
+        color: #fff
+        p:not(:last-child)
+            margin-bottom: 10px
+    &__img
+
+.problems
+    overflow: hidden
+    padding-top: 18px
+    margin-bottom: 37px
+    padding-bottom: 125px
+    background-color: #F4F4F4
+    position: relative
+    &__title
+        margin-bottom: 37px
+        max-width: 676px
+        width: 100%
+        line-height: 140%
+        font-weight: 600
+        letter-spacing: 1.75px
+    &__inner
+        display: flex
+        justify-content: space-between
+    &__content
+        margin-top: 100px
+        max-width: 731px
+        width: 100%
+        z-index: 2
+        position: relative
+    &__items
+        padding: 30px 20px 26px 22px
+        display: grid
+        grid-template-columns: 1fr 1fr
+        grid-gap: 34px
+        border-radius: 10px
+        border: 1px solid #838383
+        position: relative
+        &::before
+            left: -1px
+            content: ''
+            position: absolute
+            top: 0
+            bottom: 0
+            width: 12px
+            border-radius: 10px 0px 0px 10px
+            background-color: $primary
+    &-item
+        display: flex
+        align-items: center
+        grid-gap: 22px
+    &__number
+        color: $primary
+        font-size: 35px
+        font-weight: 500
+        line-height: 140%
+        letter-spacing: 1.75px
+        text-transform: uppercase
+    &__text
+        color: #150101
+        font-size: 15px
+        font-weight: 400
+        line-height: 140%
+        letter-spacing: 0.75px
+        text-transform: uppercase
+    &__img
+        position: absolute
+        right: -33px
+        width: 56.5%
+        bottom: 0
+        z-index: 0
+
+.information
+    margin-bottom: 84px
+
+    &__inner
+        display: flex
+        align-items: center
+        justify-content: space-between
+        grid-gap: 86px
+    &__content
+        max-width: 540px
+        width: 100%
+        border-radius: 10px
+        background: linear-gradient(122deg, #F3F1F1 -7.58%, #D7D7D7 93.34%)
+        padding: 10px
+        font-weight: 400
+    &__text
+        padding: 16px 7px 24px 15px
+        border-radius: 10px
+        border: 1px solid #FFF
+        p:not(:last-child)
+            margin-bottom: 15px
+    &__img
+        max-width: 510px
+        width: 100%
+.benefits
+    margin-bottom: 70px
+    &__title
+        margin-bottom: 47px
+        letter-spacing: 1.75px
+    &__items
+        display: grid
+        grid-template-columns: repeat(4,1fr)
+        grid-gap: 30px
+    &-item
+        padding: 9px 9px 59px
+        border-radius: 10px
+        border: 1px solid #C2C2C2
+        background: #F5F5F5
+    &-item__img
+        margin-bottom: 31px
+    &-item__content
+        text-align: center
+    &-item__title
+        margin-bottom: 10px
+        text-transform: uppercase
+        font-size: 20px
+        font-weight: 500
+    &-item__text
+        width: 226px
+        line-height: 140%
+        letter-spacing: 0.75px
+        font-weight: 400
+
+.indications
+    background: #F4F4F4
+    padding: 38px 0 60px
+    &__inner
+        padding: 40px 0 41px
+        border-radius: 10px
+        background: linear-gradient(180deg, #1910C9 -26.84%, rgba(0, 192, 156, 0.00) 124.34%)
+    &__title
+        margin-bottom: 5px
+        color: #fff
+    &__text
+        margin-bottom: 30px
+        line-height: 140%
+        color: #fff
+    &__items
+
+        display: grid
+        grid-template-columns: repeat(3,1fr)
+        justify-content: space-between
+        grid-row-gap: 20px
+        grid-column-gap: 130px
+        padding: 0 37px
+    &-item__img
+        margin: 0 auto 10px
+    &-item__title
+        font-weight: 400
+        text-align: center
+
+.reviews
+    margin: 70px 0 84px
+    &__title
+        margin-bottom: 40px
+    &__items
+    &-item
+        border-radius: 10px
+        background: #F7F7F7
+        padding: 10px
+        &:not(:last-child)
+            margin-bottom: 27px
+    &-item__inner
+        display: flex
+        align-items: center
+        grid-column-gap: 35px
+        border-radius: 10px
+        border: 1px solid $primary
+        padding: 17px 60px 16px 38px
+        position: relative
+        &::before
+            content: ""
+            position: absolute
+            right: 15px
+            top: 22px
+            background-image: url("data:image/svg+xml,%3Csvg width='38' height='32' viewBox='0 0 38 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip030726)'%3E%3Cpath d='M35.5576 28.736C35.5576 26.816 35.5576 24.96 35.5576 23.168C35.4936 21.312 35.4296 19.616 35.3656 18.08C35.1736 12.576 34.3096 8.448 32.7736 5.696C31.1736 2.88 28.1656 1.472 23.7496 1.472L22.5976 6.368C25.0936 6.432 26.6936 7.264 27.3976 8.86399C28.1016 10.464 28.4536 12.512 28.4536 15.008H21.7336V28.736H35.5576ZM15.8776 28.736C15.8776 26.816 15.8776 24.96 15.8776 23.168C15.8136 21.312 15.7496 19.616 15.6856 18.08C15.4936 12.576 14.6296 8.448 13.0936 5.696C11.4936 2.88 8.48562 1.472 4.06962 1.472L2.91762 6.368C5.41362 6.432 7.01362 7.264 7.71762 8.86399C8.42162 10.464 8.77362 12.512 8.77362 15.008H2.05362V28.736H15.8776Z' fill='%231713EC'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip030726'%3E%3Crect width='38' height='32' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A")
+            background-repeat: no-repeat
+            background-size: cover
+            width: 38px
+            height: 32px
+    &-item__img
+        width: 200px
+        height: 200px
+        border-radius: 50%
+        overflow: hidden
+    &-item__content
+        max-width: 757px
+        width: 100%
+    &-item__text
+        font-size: 14px
+        font-weight: 400
+        line-height: 21px
+        margin-bottom: 15px
+    &-item__title
+        font-size: 18px
+        letter-spacing: 0.36px
+
+.delivery
+    padding: 84px 0 59px
+    &__title
+        margin-bottom: 47px
+    &__items
+        display: grid
+        grid-template-columns: repeat(3,1fr)
+    &-item
+        text-align: center
+        font-weight: 400
+    &-item__img
+        margin: 0 auto 29px
+        display: inline-block
+
+    &-item__title
+        text-transform: uppercase
+        font-weight: 400
+    &-item__text
+        max-width: 257px
+        width: 100%
+        margin: 10px auto 0
+
+.promotion-bottom
+    padding: 20px 0 26px
+    background: linear-gradient(180deg, #002AC1 0%, #A9BDE8 100%)
+    color: #fff
+    .promotion__img
+        margin-top: 0
+        margin-left: -180px
+    .promotion-col__text
+        background-color: #E5E1E1
+    .promotion__content
+        width: 615px
+    .promotion__prices
+        position: absolute
+        top: 120px
+        right: 0
+        text-align: right
+    .form
+        width: 445px
+
+.promotion__content
+    position: relative
+
+.top.bottom
+    background-position: center center
+    background-repeat: no-repeat
+    padding: 25px 0 0
+    .top__subtitle
+        margin-bottom: 10px
+        color: #333
+    .top__title
+        font-weight: 500
+        text-transform: uppercase
+    .top__titles
+        max-width: 629px
+
+    .top__inner
+        padding-top: 85px
+    .top-img
+        margin: 0
+        position: relative
+        width: 603px
+        margin-top: -30px
+        img
+            position: relative
+            z-index: 2
+        &::before
+            content: ''
+            position: absolute
+            right: 0
+            bottom: 0
+            border-radius: 453px
+            background: rgba(25, 16, 201, 0.70)
+            filter: blur(100px)
+            width: 453px
+            z-index: 1
+            height: 453px
+
+.bottom__title
+    font-weight: 600
+
+.footer
+    background-color: #353A40
+    padding: 6px 0 34px
+    &__inner
+        text-align: center
+        color: #fff
+        font-size: 16px
+        line-height: 24px
+    &__logo
+        display: inline-block
+        margin: 0 auto 8px
+    &__links
+        position: relative
+        display: grid
+        grid-gap: 2px
+        padding-top: 10px
+        margin-top: 10px
+        &::before
+            content: ""
+            position: absolute
+            top: 0
+            width: 118px
+            height: 4px
+            border-radius: 10px
+            background-color: #fff
+            right: 0
+            left: 0
+            margin: 0 auto
+
+@import media
