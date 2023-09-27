@@ -17,7 +17,8 @@ $(function () {
      * timer start
      */
 
-    const deadline = new Date(2023, 8, 30); // конечная дата, например 1 декабря 2023
+    const deadline = new Date(new Date().getFullYear(), new Date().getMonth() + 1,
+        1); // конечная дата, например 1 декабря 2023
     // id таймера
     let timerId = null;
     // склонение числительных
@@ -27,20 +28,19 @@ $(function () {
     // вычисляем разницу дат и устанавливаем оставшееся времени в качестве содержимого элементов
     function countdownTimer() {
         const diff = deadline - new Date();
+
         if (diff <= 0) {
             clearInterval(timerId);
         }
         const days = diff > 0 ? Math.floor(diff / 1000 / 60 / 60 / 24) : 0;
         const hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0;
         const minutes = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0;
-
         if (days > 10) {
             splitIntoPieces(days, $days);
         } else {
             $days.forEach((num) => {
                 num.innerHTML = '<span>0</span>' + `<span>${days}</span>`;
             })
-
         }
         if (hours > 10) {
             splitIntoPieces(hours, $hours);
@@ -48,7 +48,6 @@ $(function () {
             $hours.forEach((num) => {
                 num.innerHTML = '<span>0</span>' + `<span>${hours}</span>`;
             })
-
         }
         if (minutes > 10) {
             splitIntoPieces(minutes, $minutes);
@@ -57,7 +56,6 @@ $(function () {
                 num.innerHTML = '<span>0</span>' + `<span>${minutes}</span>`;
             })
         }
-
         // $seconds.innerHTML = seconds < 10 ? '0' + seconds : seconds;
         $days.forEach((num) => {
             num.dataset.title = declensionNum(days, ['день', 'дня', 'дней']);
@@ -98,12 +96,14 @@ $(function () {
         $('body').toggleClass('hidden')
         $('.header-menu-inner').fadeToggle()
     })
-    $('.header-menu__link').on('click', function () {
-        $('.btn-menu').removeClass('open')
-        $('body').removeClass('hidden')
-        $('.header-menu-inner').fadeOut()
-    })
-
+    if (window.innerWidth < 1279) {
+        $('.header-menu__link').on('click', function () {
+            $('.btn-menu').removeClass('open')
+            $('body').removeClass('hidden')
+            $('.header-menu-inner').fadeOut()
+        })
+    }
+  
     /** 
      * Подцветка активных пунктов меню
      */
